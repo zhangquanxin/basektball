@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="game_add_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_count" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_mode" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="game_status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="game_team_one_color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_one_icon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="game_team_one_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_one_total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_two_color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_two_icon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="game_team_two_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_two_total" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contain_goal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="belong_game" inverseEntity="Goal" syncable="YES"/>
+    </entity>
+    <entity name="Goal" representedClassName="Goal" syncable="YES">
+        <attribute name="game_team_one_goal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="game_team_two_goal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goal_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goal_team_one_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="goal_team_two_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belong_game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="contain_goal" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="Goal" positionX="-45" positionY="63" width="128" height="135"/>
+    </elements>
+</model>
